@@ -1,5 +1,5 @@
 {
-  "name": "@blackjack/engine",
+  "name": "@idelahoz/blackjack-engine",
   "version": "0.1.0",
   "description": "UI-agnostic blackjack recommendation engine: basic-strategy lookups, expected value, and cash-out decisions.",
   "keywords": [
@@ -9,6 +9,17 @@
     "casino"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idelahoz/blackjack-engine.git"
+  },
+  "homepage": "https://github.com/idelahoz/blackjack-engine#readme",
+  "bugs": {
+    "url": "https://github.com/idelahoz/blackjack-engine/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "engines": {
     "node": ">=22"
@@ -29,6 +40,7 @@
   ],
   "sideEffects": false,
   "scripts": {
+    "prepublishOnly": "pnpm build && pnpm test && pnpm lint",
     "build": "tsup",
     "dev": "tsup --watch",
     "test": "vitest run",

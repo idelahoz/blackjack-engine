@@ -1,4 +1,4 @@
-# @blackjack/engine
+# @idelahoz/blackjack-engine
 
 ![Node 22+](https://img.shields.io/badge/node-%3E%3D22-brightgreen) ![TypeScript strict](https://img.shields.io/badge/TypeScript-strict-blue) ![ESM only](https://img.shields.io/badge/modules-ESM-yellow) ![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey)
 
@@ -13,14 +13,14 @@ The engine has **no dependency on any UI**. The CLI ([idelahoz/blackjack-cli](ht
 ## Install
 
 ```sh
-pnpm add @blackjack/engine
-# local development (unpublished): "@blackjack/engine": "link:../blackjack-engine"
+pnpm add @idelahoz/blackjack-engine
+# local development (unpublished): "@idelahoz/blackjack-engine": "link:../blackjack-engine"
 ```
 
 ## Quick start
 
 ```ts
-import { BlackjackEngine, bundledStrategyPath } from "@blackjack/engine";
+import { BlackjackEngine, bundledStrategyPath } from "@idelahoz/blackjack-engine";
 
 const engine = (
   await BlackjackEngine.create({ strategy: bundledStrategyPath("s17") })
@@ -97,7 +97,7 @@ Each is independently usable; `BlackjackEngine` is just a facade that wires them
 ### StrategyEngine — lookups only
 
 ```ts
-import { StrategyEngine, loadStrategy, bundledStrategyPath } from "@blackjack/engine";
+import { StrategyEngine, loadStrategy, bundledStrategyPath } from "@idelahoz/blackjack-engine";
 
 const strategy = (await loadStrategy(bundledStrategyPath("s17")))._unsafeUnwrap();
 const engine = new StrategyEngine({ strategy }); // rules default to strategy.rules
@@ -109,7 +109,7 @@ It never calculates probabilities. Lookup order mirrors printed charts: pairs �
 ### EvEngine — expected value
 
 ```ts
-import { RecursiveEvEngine, S17_RULES } from "@blackjack/engine";
+import { RecursiveEvEngine, S17_RULES } from "@idelahoz/blackjack-engine";
 
 const ev = new RecursiveEvEngine(S17_RULES);
 ev.expectedValue(state); // best-action EV
@@ -128,7 +128,7 @@ interface EvEngine {
 ### CashOutEngine
 
 ```ts
-import { CashOutEngine } from "@blackjack/engine";
+import { CashOutEngine } from "@idelahoz/blackjack-engine";
 
 const cashOut = new CashOutEngine({ strategyEngine, evEngine }); // dependency injection
 cashOut.evaluate({ bet: 100, cashOut: 82, state });
