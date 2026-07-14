@@ -184,3 +184,10 @@ pnpm build       # tsup → dist/ (ESM + d.ts)
 pnpm lint
 pnpm typecheck
 ```
+
+## Creator
+
+**Israel De La Hoz**
+
+- GitHub: [@idelahoz](https://github.com/idelahoz)
+- LinkedIn: [israel-de-la-hoz](https://www.linkedin.com/in/israel-de-la-hoz-ba973326/)
