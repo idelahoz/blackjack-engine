@@ -21,10 +21,13 @@ export function parseCard(input: string): Result<Card, InvalidCardError> {
   return err(invalidCard(input));
 }
 
-/** Parses a comma-separated hand such as "A,7" or "10, J, 3". Requires at least two cards. */
+/**
+ * Parses a hand of comma- and/or space-separated cards, such as "A,7",
+ * "A 7", or "10, J, 3". Requires at least two cards.
+ */
 export function parseHand(input: string): Result<Card[], InvalidCardError | InvalidHandError> {
   const parts = input
-    .split(",")
+    .split(/[,\s]+/)
     .map((part) => part.trim())
     .filter((part) => part.length > 0);
   if (parts.length < 2) {

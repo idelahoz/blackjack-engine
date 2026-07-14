@@ -33,6 +33,13 @@ describe("parseHand", () => {
     expect(parseHand("10, J, 3")._unsafeUnwrap()).toEqual(hand("10", "J", "3"));
   });
 
+  it("parses space-separated hands, including mixed separators", () => {
+    expect(parseHand("A 7")._unsafeUnwrap()).toEqual(hand("A", "7"));
+    expect(parseHand("10 J 3")._unsafeUnwrap()).toEqual(hand("10", "J", "3"));
+    expect(parseHand("A, 7 K")._unsafeUnwrap()).toEqual(hand("A", "7", "K"));
+    expect(parseHand("  8   8  ")._unsafeUnwrap()).toEqual(hand("8", "8"));
+  });
+
   it("requires at least two cards", () => {
     expect(parseHand("A")._unsafeUnwrapErr().type).toBe("invalid_hand");
     expect(parseHand("")._unsafeUnwrapErr().type).toBe("invalid_hand");

@@ -1,6 +1,6 @@
 {
   "name": "@idelahoz/blackjack-engine",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "UI-agnostic blackjack recommendation engine: basic-strategy lookups, expected value, and cash-out decisions.",
   "keywords": [
     "blackjack",
