@@ -13,8 +13,7 @@ The engine has **no dependency on any UI**. The CLI ([idelahoz/blackjack-cli](ht
 ## Install
 
 ```sh
-pnpm add @idelahoz/blackjack-engine
-# local development (unpublished): "@idelahoz/blackjack-engine": "link:../blackjack-engine"
+npm install @idelahoz/blackjack-engine   # or: pnpm add @idelahoz/blackjack-engine
 ```
 
 ## Quick start
