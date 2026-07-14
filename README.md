@@ -1,12 +1,14 @@
 # @blackjack/engine
 
+![Node 22+](https://img.shields.io/badge/node-%3E%3D22-brightgreen) ![TypeScript strict](https://img.shields.io/badge/TypeScript-strict-blue) ![ESM only](https://img.shields.io/badge/modules-ESM-yellow) ![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey)
+
 A UI-agnostic blackjack recommendation engine for Node.js 22+ (ESM, TypeScript, strict mode). It answers three questions about a hand in play:
 
 1. **What does basic strategy say?** — pure table lookup, loaded from external JSON charts.
 2. **What is the hand worth?** — expected value via a recursive, memoized calculator.
 3. **Should I take a cash-out offer?** — EV of continuing vs. the offer.
 
-The engine has **no dependency on any UI**. The CLI (`@blackjack/cli`) is just its first consumer; a React app, REST API, browser extension, or mobile app can consume the same API.
+The engine has **no dependency on any UI**. The CLI ([idelahoz/blackjack-cli](https://github.com/idelahoz/blackjack-cli)) is just its first consumer; a React app, REST API, browser extension, or mobile app can consume the same API.
 
 ## Install
 
